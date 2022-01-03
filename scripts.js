@@ -12,10 +12,9 @@ const removeBook = (index) => {
 const booksContainer = document.querySelector('.book-container');
 
 function renderBooks() {
-  for (let index = 0; index < library.length; index += 1) {
-    const book = library[index];
+  library.forEach((book) => {
     displayBook(book);
-  }
+  })
 }
 
 function displayBook(book) {
@@ -25,7 +24,6 @@ function displayBook(book) {
   const removeButton = document.createElement('button');
 
   bookCard.classList.add('book-Card')
-  // book.id = index;
 
   cardTitle.textContent = book.title;
   cardAuthor.textContent = book.author;
@@ -48,7 +46,7 @@ const saveDataLocally = (library) => {
   localStorage.setItem('library', stringifiedLibrary);
 }
 
-function addBookToLibrary(title, author) {
+function addBookToLibrary() {
   const inputTitle = document.querySelector('#title').value;
   const inputAuthor = document.querySelector('#author').value;
   const book = new Book(inputTitle, inputAuthor);
@@ -58,14 +56,12 @@ function addBookToLibrary(title, author) {
 }
 
 const addButton = document.querySelector('.add');
-addButton.addEventListener('click', () => addBookToLibrary(library));
+addButton.addEventListener('click', () => addBookToLibrary());
 
 window.onload = () => {
   if (localStorage.getItem('library') !== null) {
   let myLibrary = JSON.parse(localStorage.getItem('library'));
   library = myLibrary;
+  } 
   renderBooks();
-} else {
-  renderBooks();
-}
 }
