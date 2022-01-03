@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin: 0;
+}
+
+form > * {
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.book-Card {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
