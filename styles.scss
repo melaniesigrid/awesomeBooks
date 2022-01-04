@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+  font-family: 'Comic Neue', cursive;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -16,8 +22,47 @@ div {
   box-sizing: border-box;
 }
 
-.book-Card {
-  padding: 10px;
-  margin-bottom: 5px;
-  border-bottom: 1px solid gray;
+h1 {
+  text-align: center;
 }
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-container {
+  border: 3px solid black;
+  width: 90vw;
+  
+  :nth-child(odd) {
+    background-color: rgb(236, 236, 236);
+  }
+}
+
+@mixin button {
+  background-color: white;
+}
+
+.book-Card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  :nth-child(odd){
+    background-color: transparent;
+  }
+  
+  .remove {
+    @include button;
+  }
+}
+
+.btn {
+  @include button;
+}
+
+
+
+
+

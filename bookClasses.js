@@ -30,17 +30,15 @@ class Book {
   displayBook = () => {
     const bookCard = document.createElement('div');
     const cardTitle = document.createElement('p');
-    const cardAuthor = document.createElement('p');
     const removeButton = document.createElement('button');
 
     bookCard.classList.add('book-Card');
 
-    cardTitle.textContent = this.title;
-    cardAuthor.textContent = this.author;
+    cardTitle.textContent = `"${this.title}"   by   ${this.author}`;
     removeButton.textContent = 'Remove';
+    removeButton.classList.add('remove');
 
     bookCard.appendChild(cardTitle);
-    bookCard.appendChild(cardAuthor);
     bookCard.appendChild(removeButton);
 
     booksContainer.appendChild(bookCard);
