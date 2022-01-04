@@ -1,30 +1,33 @@
-class Library {
-  constructor() {
-    this.collection = [];
-  }
-  saveDataLocally = () => {
-    const stringifiedLibrary = JSON.stringify(this.collection);
-    localStorage.setItem('library', stringifiedLibrary);
-  }
-}
+const inputTitle = document.querySelector('#title');
+const inputAuthor = document.querySelector('#author');
+const booksContainer = document.querySelector('.book-container');
 
 class Book {
+  static collection = [];
+
   constructor(title, author) {
     this.title = title;
     this.author = author;
   }
 
-  removeBook = (library) => {
-    library.collection = library.collection.filter((book) => book.title !== this.title || book.author !== this.author);
+  static saveDataLocally = () => {
+    const stringifiedLibrary = JSON.stringify(Book.collection);
+    localStorage.setItem('library', stringifiedLibrary);
+  }
+
+  removeBook = () => {
+    Book.collection = Book.collection.filter((book) => book.title !== this.title
+    || book.author !== this.author);
+    Book.saveDataLocally();
   };
 
-  addBook = (library) => {
-    library.collection.push(this);
-    library.saveDataLocally();
-    this.displayBook(library);
+  addBook = () => {
+    Book.collection.push(this);
+    Book.saveDataLocally();
+    this.displayBook();
   }
-    
-  displayBook = (library) => {
+
+  displayBook = () => {
     const bookCard = document.createElement('div');
     const cardTitle = document.createElement('p');
     const cardAuthor = document.createElement('p');
@@ -43,22 +46,16 @@ class Book {
     booksContainer.appendChild(bookCard);
 
     removeButton.addEventListener('click', () => {
-      this.removeBook(library);
-      library.saveDataLocally();
+      this.removeBook();
+      Book.saveDataLocally();
       booksContainer.removeChild(bookCard);
     });
   }
 }
 
-
-const inputTitle = document.querySelector('#title');
-const inputAuthor = document.querySelector('#author');
-const booksContainer = document.querySelector('.book-container');
-const myLibrary = new Library();
-
 function checkRepetition(book) {
-  for (let i = 0; i < myLibrary.collection.length; i += 1) {
-    const currentBook = myLibrary.collection[i];
+  for (let i = 0; i < Book.collection.length; i += 1) {
+    const currentBook = Book.collection[i];
     if (currentBook.title.toLowerCase() === book.title.toLowerCase()
     && currentBook.author.toLowerCase() === book.author.toLowerCase()) {
       alert('Book already added');
@@ -73,15 +70,15 @@ function addBookToLibrary() {
   const inputAuthorValue = inputAuthor.value;
   const book = new Book(inputTitleValue, inputAuthorValue);
   if (checkRepetition(book)) {
-    book.addBook(myLibrary);
+    book.addBook();
   }
 }
 
-renderBooks = () => {
-  myLibrary.collection.forEach((book) => {
-    book.displayBook(myLibrary);
-});
-}
+const renderBooks = () => {
+  Book.collection.forEach((book) => {
+    book.displayBook();
+  });
+};
 
 const addForm = document.querySelector('form');
 addForm.addEventListener('submit', (e) => {
@@ -96,14 +93,8 @@ window.onload = () => {
     const myStorageLibrary = JSON.parse(localStorage.getItem('library'));
     myStorageLibrary.forEach((book) => {
       const newBook = new Book(book.title, book.author);
-      myLibrary.collection.push(newBook);
-    })
+      Book.collection.push(newBook);
+    });
   }
   renderBooks();
 };
-
-
-
-
-
-
