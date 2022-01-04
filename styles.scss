@@ -1,10 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+  font-family: 'Comic Neue', cursive;
+}
+
+button {
+  transition: all ease-in 0.2s;
+}
+
 form {
   display: flex;
   flex-direction: column;
+
+  label {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    font-family: 'Comic Neue', cursive;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 5px;
+    color: black;
+    font-weight: 600;
+    border: 3px solid black;
+  }
+
+  button {
+    align-self: flex-end;
+  }
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+::placeholder {
+  color: black;
 }
 
 p {
   margin: 0;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 form > * {
@@ -16,8 +56,76 @@ div {
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-container {
+  border: 4px solid black;
+  width: 90vw;
+
+  :nth-child(odd) {
+    background-color: rgb(236, 236, 236);
+  }
+}
+
+@mixin button {
+  background-color: white;
+  font-family: 'Comic Neue', cursive;
+  font-size: 20px;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border: 3px solid black;
+  box-shadow: 4px 4px black;
+}
+
 .book-Card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  margin-bottom: 5px;
-  border-bottom: 1px solid gray;
+
+  :nth-child(odd) {
+    background-color: transparent;
+  }
+
+  .remove {
+    @include button;
+  }
+
+  .remove:hover {
+    background-color: rgb(117, 0, 196);
+    color: white;
+  }
+}
+
+.btn {
+  @include button;
+}
+
+.btn:hover {
+  background-color: rgb(117, 0, 196);
+  color: white;
+}
+
+.book-display {
+  hr {
+    margin-top: 30px;
+    width: 20vw;
+    border-bottom: 4px solid black;
+  }
 }

@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+body {
+  font-family: 'Comic Neue', cursive;
+}
+
+button {
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+}
+
 form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,8 +18,53 @@ form {
           flex-direction: column;
 }
 
+form label {
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  font-family: 'Comic Neue', cursive;
+  font-size: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+  color: black;
+  font-weight: 600;
+  border: 3px solid black;
+}
+
+form button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+::-webkit-input-placeholder {
+  color: black;
+}
+
+:-ms-input-placeholder {
+  color: black;
+}
+
+::-ms-input-placeholder {
+  color: black;
+}
+
+::placeholder {
+  color: black;
+}
+
 p {
   margin: 0;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 form > * {
@@ -24,9 +79,95 @@ div {
           box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book-container {
+  border: 4px solid black;
+  width: 90vw;
+}
+
+.book-container :nth-child(odd) {
+  background-color: #ececec;
+}
+
 .book-Card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
-  margin-bottom: 5px;
-  border-bottom: 1px solid gray;
+}
+
+.book-Card :nth-child(odd) {
+  background-color: transparent;
+}
+
+.book-Card .remove {
+  background-color: white;
+  font-family: 'Comic Neue', cursive;
+  font-size: 20px;
+  font-weight: 600;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px 10px;
+  border: 3px solid black;
+  -webkit-box-shadow: 4px 4px black;
+          box-shadow: 4px 4px black;
+}
+
+.book-Card .remove:hover {
+  background-color: #7500c4;
+  color: white;
+}
+
+.btn {
+  background-color: white;
+  font-family: 'Comic Neue', cursive;
+  font-size: 20px;
+  font-weight: 600;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px 10px;
+  border: 3px solid black;
+  -webkit-box-shadow: 4px 4px black;
+          box-shadow: 4px 4px black;
+}
+
+.btn:hover {
+  background-color: #7500c4;
+  color: white;
+}
+
+.book-display hr {
+  margin-top: 30px;
+  width: 20vw;
+  border-bottom: 4px solid black;
 }
 /*# sourceMappingURL=styles.css.map */

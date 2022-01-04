@@ -4,7 +4,7 @@
 
 > A library that stores books in your browser's Local Storage.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./preview.gif)
 
 ## Built With
 
@@ -12,19 +12,31 @@
 - CSS
 - SASS
 - JavaScript
+## Live Demo
+
+[Live Demo](https://melaniesigrid.github.io/awesomeBooks/)
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+- Clone this repository with git clone```git@github.com:melaniesigrid/awesomeBooks.git``` using your terminal or command line.
+- Change to the project directory by entering : <br>
+```cd awesomeBooks``` in the terminal
+
 ## Authors
-
-👤 **Andrés Felipe Arroyave Naranjo**
-
-- GitHub: [@JohnFTitor](https://github.com/JohnFTitor)
-- Twitter: [@johnftitor](https://twitter.com/johnftitor)
-- LinkedIn: [Andres](https://www.linkedin.com/in/andresfelipe117/?locale=en_US)
 
 👤 **Melanie Sigrid**
 
 - GitHub: [@melaniesigrid](https://github.com/melaniesigrid)
 - Twitter: [@SiriMoon11](https://twitter.com/SiriMoon11)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/melanie-arellano-92aaa9194/)
+
+👤 **Andrés Felipe Arroyave Naranjo**
+
+- GitHub: [@JohnFTitor](https://github.com/JohnFTitor)
+- Twitter: [@johnftitor](https://twitter.com/johnftitor)
+- LinkedIn: [Andres](https://www.linkedin.com/in/andresfelipe117/?locale=en_US)
 
 ## 🤝 Contributing
 
