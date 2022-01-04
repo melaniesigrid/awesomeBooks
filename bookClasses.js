@@ -66,7 +66,7 @@ function checkRepetition(book) {
 function addBookToLibrary() {
   const inputTitleValue = inputTitle.value;
   const inputAuthorValue = inputAuthor.value;
-  const book = new Book(inputTitleValue, inputAuthorValue);
+  const book = new Book(inputTitleValue.trim(), inputAuthorValue.trim());
   if (checkRepetition(book)) {
     book.addBook();
   }
