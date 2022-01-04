@@ -6,11 +6,6 @@ class Library {
     const stringifiedLibrary = JSON.stringify(this.collection);
     localStorage.setItem('library', stringifiedLibrary);
   }
-  renderBooks = () => {
-    this.collection.forEach((book) => {
-    displayBook(library);
-  });
-  }
 }
 
 class Book {
@@ -22,9 +17,13 @@ class Book {
   removeBook = (library) => {
     library.collection = library.collection.filter((book) => book.title !== this.title || book.author !== this.author);
   };
-  
-  booksContainer = document.querySelector('.book-container');
-  
+
+  addBook = (library) => {
+    library.collection.push(this);
+    library.saveDataLocally();
+    this.displayBook(library);
+  }
+    
   displayBook = (library) => {
     const bookCard = document.createElement('div');
     const cardTitle = document.createElement('p');
@@ -54,11 +53,12 @@ class Book {
 
 const inputTitle = document.querySelector('#title');
 const inputAuthor = document.querySelector('#author');
+const booksContainer = document.querySelector('.book-container');
 const myLibrary = new Library();
 
 function checkRepetition(book) {
-  for (let i = 0; i < library.length; i += 1) {
-    const currentBook = library[i];
+  for (let i = 0; i < myLibrary.collection.length; i += 1) {
+    const currentBook = myLibrary.collection[i];
     if (currentBook.title.toLowerCase() === book.title.toLowerCase()
     && currentBook.author.toLowerCase() === book.author.toLowerCase()) {
       alert('Book already added');
@@ -67,6 +67,41 @@ function checkRepetition(book) {
   }
   return true;
 }
+
+function addBookToLibrary() {
+  const inputTitleValue = inputTitle.value;
+  const inputAuthorValue = inputAuthor.value;
+  const book = new Book(inputTitleValue, inputAuthorValue);
+  if (checkRepetition(book)) {
+    book.addBook(myLibrary);
+  }
+}
+
+renderBooks = () => {
+  myLibrary.collection.forEach((book) => {
+    book.displayBook(myLibrary);
+});
+}
+
+const addForm = document.querySelector('form');
+addForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  addBookToLibrary();
+  inputTitle.value = '';
+  inputAuthor.value = '';
+});
+
+window.onload = () => {
+  if (localStorage.getItem('library') !== null) {
+    const myStorageLibrary = JSON.parse(localStorage.getItem('library'));
+    myStorageLibrary.forEach((book) => {
+      const newBook = new Book(book.title, book.author);
+      myLibrary.collection.push(newBook);
+    })
+  }
+  renderBooks();
+};
+
 
 
 
