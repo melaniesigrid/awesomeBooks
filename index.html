@@ -13,27 +13,42 @@
 </head>
 
 <body>
-  <h1>Awesome books</h1>
-  <section class="book-display">
-    <div class="book-container">
-
-    </div>
-    <hr>
-  </section>
-  <section class="add-books">
-    <form>
-      <h2>Add a new book</h2>
-      <label for="title">
-        <input id="title" placeholder="Title" required>
-      </label>
-      <label for="author">
-        <input id="author" placeholder="Author" required>
-      </label>
-      <button type="submit" class="add btn">Add</button>
-    </form>
-
-  </section>
-
+  <div class="app-container">
+    <header>
+      <nav>
+        <ul class="nav nav-spaced">
+          <li><p>Awesome Books</p></li>
+          <li>
+            <ul class="nav">
+              <li><a id="first" class="page" href="#list">List</a> </li>
+              <li><a class="page" href="#books">Add Book</a></li>  
+              <li><a class="page" href="#">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section id="list" class="book-display">
+      <h1>Awesome books</h1>
+      <div class="book-container">
+      </div>
+    </section>
+    <section id="books" class="add-books d-none">
+      <form>
+        <h2>Add a new book</h2>
+        <label for="title">
+          <input id="title" placeholder="Title" required>
+        </label>
+        <label for="author">
+          <input id="author" placeholder="Author" required>
+        </label>
+        <button type="submit" class="add btn">Add</button>
+      </form>
+    </section>
+    <footer>
+      <p>Copyright @melaniesigrid and @JohnFTitor</p>
+    </footer>
+</div>
   <!--JavaScript file-->
   <script src="bookClasses.js"></script>
 </body>

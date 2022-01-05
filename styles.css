@@ -1,6 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 body {
   font-family: 'Comic Neue', cursive;
+  margin: 0;
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: 'header' 'main' 'footer';
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  border: 3px solid black;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-spaced {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav p {
+  font-size: 24px;
+}
+
+.page {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 5px 20px;
+  border-left: 3px solid black;
+}
+
+#first {
+  border: none;
+}
+
+li {
+  list-style: none;
 }
 
 button {
@@ -165,9 +224,27 @@ section {
   color: white;
 }
 
-.book-display hr {
-  margin-top: 30px;
-  width: 20vw;
-  border-bottom: 4px solid black;
+.book-display {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-bottom: 50px;
+}
+
+.d-none {
+  display: none;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 3px solid black;
+  padding: 10px 20px;
 }
 /*# sourceMappingURL=styles.css.map */

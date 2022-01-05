@@ -2,6 +2,56 @@
 
 body {
   font-family: 'Comic Neue', cursive;
+  margin: 0;
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+  'header'
+  'main'
+  'footer';
+}
+
+header {
+  grid-area: header;
+  border: 3px solid black;
+}
+
+.nav {
+  display: flex;
+  &-spaced {
+    justify-content: space-between;
+  }
+  p {
+    font-size: 24px;
+  }
+}
+
+.page {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  padding:  5px 20px;
+  border-left: 3px solid black;
+}
+
+#first {
+  border: none;
+}
+
+li {
+  list-style: none;
 }
 
 button {
@@ -123,9 +173,19 @@ section {
 }
 
 .book-display {
-  hr {
-    margin-top: 30px;
-    width: 20vw;
-    border-bottom: 4px solid black;
-  }
+  grid-area: main;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}
+
+.d-none {
+  display: none;
+}
+
+footer {
+  grid-area: footer;
+  box-sizing: border-box;
+  border: 3px solid black;
+  padding: 10px 20px;
 }
