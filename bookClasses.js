@@ -96,3 +96,28 @@ window.onload = () => {
   }
   renderBooks();
 };
+
+const aTags = document.querySelectorAll('a');
+const sections = document.querySelectorAll('section');
+const reGex = /#[\w-]+/g;
+
+aTags.forEach((a) => {
+  a.addEventListener('click', (event) => {
+    const currentId = event.target.href.match(reGex)[0];
+    const currentSection = document.querySelector(currentId);
+
+    let currentLink = document.querySelector('.selected');
+    currentLink.classList.remove('selected');
+
+    currentLink = event.target;
+
+    sections.forEach((section) => {
+      if (section === currentSection) {
+        section.classList.remove('d-none');
+        currentLink.classList.add('selected');
+      } else {
+        section.classList.add('d-none');
+      }
+    });
+  });
+});

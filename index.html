@@ -13,27 +13,68 @@
 </head>
 
 <body>
-  <h1>Awesome books</h1>
-  <section class="book-display">
-    <div class="book-container">
-
+  <div class="app-container">
+    <div class="browser">
+      <p class="web-title">A web Page</p>
+      <div class="browser-navigation">
+        <img src="images/left.png" alt ="Left arrow">
+        <img src="images/right.png" alt="Right arrow">
+        <img src="images/delete-cross.png" alt="Delete">
+        <img src="images/home.png" alt="Home">
+        <div class="address-bar"><p>https://</p></div>
+        <img src="images/searching-bar3.png" alt="Search bar">
+      </div>
     </div>
-    <hr>
-  </section>
-  <section class="add-books">
-    <form>
-      <h2>Add a new book</h2>
-      <label for="title">
-        <input id="title" placeholder="Title" required>
-      </label>
-      <label for="author">
-        <input id="author" placeholder="Author" required>
-      </label>
-      <button type="submit" class="add btn">Add</button>
-    </form>
-
-  </section>
-
+    <header>
+      <nav>
+        <ul class="nav nav-spaced">
+          <li><p>Awesome Books</p></li>
+          <li>
+            <ul class="nav">
+              <li><a id="first" class="page selected" href="#list">List</a> </li>
+              <li><a class="page" href="#add-books">Add Book</a></li>  
+              <li><a class="page" href="#contact">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="mainApp">
+      <section id="list" class="book-display">
+        <h1>Awesome books</h1>
+        <div class="book-container">
+        </div>
+      </section>
+      <section id="add-books" class="add-books d-none">
+        <form>
+          <h2>Add a new book</h2>
+          <label for="title">
+            <input id="title" placeholder="Title" required>
+          </label>
+          <label for="author">
+            <input id="author" placeholder="Author" required>
+          </label>
+          <button type="submit" class="add btn">Add</button>
+        </form>
+      </section>
+      <section class="contact d-none" id="contact">
+        <h2>Contact information</h2>
+        <p>Do you have any questions or you just want to say "Hello"?<br>You can reach out to us!</p>
+        <ul>
+          <li>Andrew's email: andresf.2117@gmail.com</li>
+          <li>Melanie's email: melaniesigrid@protonmail.com</li>
+          <li>Andrew's Twitter: <a href="https://twitter.com/johnftitor" target="_blank" rel="noopener noreferrer">@johnftitor</a></li>
+          <li>Melanie's Twitter: <a href="https://twitter.com/SiriMoon11" target="_blank" rel="noopener noreferrer">@SiriMoon11</a></li>
+        </ul>
+      </section>
+    </div>
+    <footer>
+      <p>Copyright @melaniesigrid and @JohnFTitor</p>
+    </footer>
+    <div class="bottom-decoration">
+      <p>//</p>
+    </div>
+</div>
   <!--JavaScript file-->
   <script src="bookClasses.js"></script>
 </body>
