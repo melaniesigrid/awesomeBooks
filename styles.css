@@ -6,6 +6,17 @@ body {
           box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
 .app-container {
   width: 100%;
   height: 100vh;
@@ -18,7 +29,7 @@ body {
       grid-template-columns: 1fr;
   -ms-grid-rows: auto auto 1fr auto auto;
       grid-template-rows: auto auto 1fr auto auto;
-      grid-template-areas: 'top-decoration' 'header' 'main' 'footer' 'bottom-decoration';
+      grid-template-areas: 'top-decoration' 'header' 'main' 'footer' 'bottom-decoration';
   border: 4px solid black;
 }
 
@@ -183,12 +194,6 @@ button:hover {
   color: black;
 }
 
-p {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
-
 form > * {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -207,15 +212,7 @@ h1 {
   font-weight: 700;
 }
 
-h2 {
-  font-size: 40px;
-  font-weight: 700;
-}
-
 section {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: main;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,6 +223,15 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.mainApp {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: main;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: auto;
 }
 
 .book-container {
@@ -291,7 +297,6 @@ section {
 }
 
 .book-display {
-  overflow: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-bottom: 50px;
@@ -315,7 +320,8 @@ section {
   font-size: 60px;
 }
 
-.contact p, .contact ul {
+.contact p,
+.contact ul {
   font-size: 40px;
 }
 
@@ -360,5 +366,41 @@ footer {
   font-size: 40px;
   font-weight: bold;
   padding: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .browser-navigation img {
+    display: none;
+  }
+  .contact h2 {
+    font-size: 50px;
+  }
+  .contact p,
+  .contact ul {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .contact h2 {
+    font-size: 50px;
+  }
+  .contact p,
+  .contact ul {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 10px;
+  }
+  #first {
+    border-left: 3px solid black;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
