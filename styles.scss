@@ -85,6 +85,10 @@ header {
   border-left: 3px solid black;
 }
 
+.selected {
+  color: rgb(117, 0, 196);
+}
+
 #first {
   border: none;
 }
@@ -100,7 +104,12 @@ button {
 form {
   display: flex;
   flex-direction: column;
-
+  
+  h2 {
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+  
   label {
     width: 100%;
   }
@@ -147,7 +156,7 @@ div {
 
 h1 {
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 700;
 }
 
@@ -157,6 +166,7 @@ h2 {
 }
 
 section {
+  grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -212,10 +222,29 @@ section {
 }
 
 .book-display {
-  grid-area: main;
   overflow: auto;
   box-sizing: border-box;
   padding-bottom: 50px;
+}
+
+.add-books {
+  justify-content: center;
+}
+
+.contact {
+  justify-content: center;
+  list-style: circle;
+  font-weight: bold;
+  h2 {
+    font-size: 60px;
+  }
+  p, ul {
+    font-size: 40px;
+  }
+  
+  ul li {
+    list-style: circle;
+  }
 }
 
 .d-none {

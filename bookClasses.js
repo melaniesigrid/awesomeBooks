@@ -105,9 +105,15 @@ aTags.forEach( (a) => {
   a.addEventListener('click', (event) => {
     const currentId = event.target.href.match(reGex)[0];
     const currentSection = document.querySelector(currentId);
-    sections.forEach( (section) => {
-      if(section === currentSection) {
-        console.log("This one is" + section.id);
+
+    sections.forEach((section) => {
+      const currentLink = event.target;
+      if (section === currentSection) {
+        section.classList.remove('d-none');
+        currentLink.classList.add('selected');
+      } else {
+        section.classList.add('d-none');
+        currentLink.classList.remove('selected');
       }
     })
   })

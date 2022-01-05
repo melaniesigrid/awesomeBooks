@@ -18,7 +18,7 @@ body {
       grid-template-columns: 1fr;
   -ms-grid-rows: auto auto 1fr auto auto;
       grid-template-rows: auto auto 1fr auto auto;
-      grid-template-areas: 'top-decoration' 'header' 'main' 'footer' 'bottom-decoration';
+      grid-template-areas: 'top-decoration' 'header' 'main' 'footer' 'bottom-decoration';
   border: 4px solid black;
 }
 
@@ -108,6 +108,10 @@ header {
   border-left: 3px solid black;
 }
 
+.selected {
+  color: #7500c4;
+}
+
 #first {
   border: none;
 }
@@ -129,6 +133,11 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+form h2 {
+  font-size: 50px;
+  margin-bottom: 40px;
 }
 
 form label {
@@ -194,7 +203,7 @@ div {
 
 h1 {
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 700;
 }
 
@@ -204,6 +213,9 @@ h2 {
 }
 
 section {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: main;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,13 +291,36 @@ section {
 }
 
 .book-display {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: main;
   overflow: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-bottom: 50px;
+}
+
+.add-books {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: circle;
+  font-weight: bold;
+}
+
+.contact h2 {
+  font-size: 60px;
+}
+
+.contact p, .contact ul {
+  font-size: 40px;
+}
+
+.contact ul li {
+  list-style: circle;
 }
 
 .d-none {
