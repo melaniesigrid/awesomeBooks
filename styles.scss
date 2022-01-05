@@ -6,6 +6,17 @@ body {
   box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
 .app-container {
   width: 100%;
   height: 100vh;
@@ -14,15 +25,14 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto auto;
-  grid-template-areas: 
-  'top-decoration'
-  'header'
-  'main'
-  'footer'
-  'bottom-decoration';
+  grid-template-areas:
+    'top-decoration'
+    'header'
+    'main'
+    'footer'
+    'bottom-decoration';
   border: 4px solid black;
 }
-
 
 .browser {
   grid-area: top-decoration;
@@ -30,22 +40,25 @@ body {
   flex-direction: column;
   text-align: center;
   border-bottom: 4px solid black;
-  background-color:rgb(213, 167, 218);
-    .web-title {
-      font-size: 30px;
-      margin-top: 10px;
-      font-weight: 900;
+  background-color: rgb(213, 167, 218);
+
+  .web-title {
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: 900;
+  }
+
+  &-navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 50px;
+
+    img {
+      width: auto;
+      height: 60px;
     }
-    &-navigation {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 5px 50px;
-        img {
-          width: auto;
-          height: 60px;
-        }
-    }
+  }
 }
 
 .address-bar {
@@ -67,9 +80,11 @@ header {
 
 .nav {
   display: flex;
+
   &-spaced {
     justify-content: space-between;
   }
+
   p {
     font-size: 24px;
   }
@@ -81,7 +96,7 @@ header {
   color: black;
   font-size: 24px;
   font-weight: 600;
-  padding:  5px 20px;
+  padding: 5px 20px;
   border-left: 3px solid black;
 }
 
@@ -104,12 +119,12 @@ button {
 form {
   display: flex;
   flex-direction: column;
-  
+
   h2 {
     font-size: 50px;
     margin-bottom: 40px;
   }
-  
+
   label {
     width: 100%;
   }
@@ -139,12 +154,6 @@ button:hover {
   color: black;
 }
 
-p {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
-
 form > * {
   width: fit-content;
   margin-bottom: 20px;
@@ -160,11 +169,6 @@ h1 {
   font-weight: 700;
 }
 
-h2 {
-  font-size: 40px;
-  font-weight: 700;
-}
-
 section {
   grid-area: main;
   display: flex;
@@ -177,7 +181,7 @@ section {
   width: 90vw;
 
   :nth-child(odd) {
-    background-color:rgb(227, 177, 233);
+    background-color: rgb(227, 177, 233);
   }
 }
 
@@ -235,13 +239,16 @@ section {
   justify-content: center;
   list-style: circle;
   font-weight: bold;
+
   h2 {
     font-size: 60px;
   }
-  p, ul {
+
+  p,
+  ul {
     font-size: 40px;
   }
-  
+
   ul li {
     list-style: circle;
   }
@@ -265,9 +272,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-color:rgb(213, 167, 218);
-  border-top:  4px solid black;
-  
+  background-color: rgb(213, 167, 218);
+  border-top: 4px solid black;
+
   p {
     font-size: 40px;
     font-weight: bold;
