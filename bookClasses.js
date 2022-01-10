@@ -1,6 +1,7 @@
 const inputTitle = document.querySelector('#title');
 const inputAuthor = document.querySelector('#author');
 const booksContainer = document.querySelector('.book-container');
+const indicator = document.querySelector('#indicator');
 
 class Book {
   static collection = [];
@@ -56,7 +57,7 @@ function checkRepetition(book) {
     const currentBook = Book.collection[i];
     if (currentBook.title.toLowerCase() === book.title.toLowerCase()
     && currentBook.author.toLowerCase() === book.author.toLowerCase()) {
-      alert('Book already added');
+      indicator.textContent = 'Book already added';
       return false;
     }
   }
@@ -69,6 +70,7 @@ function addBookToLibrary() {
   const book = new Book(inputTitleValue.trim(), inputAuthorValue.trim());
   if (checkRepetition(book)) {
     book.addBook();
+    indicator.textContent = 'Book added succesfully';
   }
 }
 
@@ -105,6 +107,7 @@ aTags.forEach((a) => {
   a.addEventListener('click', (event) => {
     const currentId = event.target.href.match(reGex)[0];
     const currentSection = document.querySelector(currentId);
+    indicator.textContent = '';
 
     let currentLink = document.querySelector('.selected');
     currentLink.classList.remove('selected');
