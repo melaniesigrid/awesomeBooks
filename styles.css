@@ -172,6 +172,14 @@ form button {
       align-self: flex-end;
 }
 
+form span {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #910000;
+}
+
 button:hover {
   cursor: pointer;
   -webkit-transform: scale(1.1);

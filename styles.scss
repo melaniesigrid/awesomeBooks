@@ -143,6 +143,14 @@ form {
   button {
     align-self: flex-end;
   }
+
+  span {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(145, 0, 0);
+  }
 }
 
 button:hover {
