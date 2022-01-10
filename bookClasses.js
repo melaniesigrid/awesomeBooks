@@ -1,6 +1,10 @@
 const inputTitle = document.querySelector('#title');
 const inputAuthor = document.querySelector('#author');
 const booksContainer = document.querySelector('.book-container');
+const removeAll = document.querySelector('#delete');
+const home = document.querySelector('#home');
+const previous = document.querySelector('#previous');
+const next = document.querySelector('#next');
 
 class Book {
   static collection = [];
@@ -16,8 +20,8 @@ class Book {
   }
 
   removeBook = () => {
-    Book.collection = Book.collection.filter((book) => book.title !== this.title
-    || book.author !== this.author);
+    Book.collection = Book.collection.filter((book) => book.title !== this.title ||
+      book.author !== this.author);
     Book.saveDataLocally();
   };
 
@@ -48,14 +52,22 @@ class Book {
       Book.saveDataLocally();
       booksContainer.removeChild(bookCard);
     });
+
+    removeAll.addEventListener('click', () => {
+      for (let i = 0; i < Book.collection.length; i += 1) {
+        this.removeBook();
+        Book.saveDataLocally();
+        booksContainer.removeChild(bookCard);
+      }
+    });
   }
 }
 
 function checkRepetition(book) {
   for (let i = 0; i < Book.collection.length; i += 1) {
     const currentBook = Book.collection[i];
-    if (currentBook.title.toLowerCase() === book.title.toLowerCase()
-    && currentBook.author.toLowerCase() === book.author.toLowerCase()) {
+    if (currentBook.title.toLowerCase() === book.title.toLowerCase() &&
+      currentBook.author.toLowerCase() === book.author.toLowerCase()) {
       alert('Book already added');
       return false;
     }
@@ -105,7 +117,6 @@ aTags.forEach((a) => {
   a.addEventListener('click', (event) => {
     const currentId = event.target.href.match(reGex)[0];
     const currentSection = document.querySelector(currentId);
-
     let currentLink = document.querySelector('.selected');
     currentLink.classList.remove('selected');
 

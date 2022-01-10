@@ -73,6 +73,10 @@ h2 {
   height: 60px;
 }
 
+.browser #delete, .browser #home, .browser #previous, .browser #next {
+  cursor: pointer;
+}
+
 .address-bar {
   text-align: left;
   -webkit-box-sizing: border-box;
@@ -106,7 +110,7 @@ header {
 }
 
 .nav p {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .page {
@@ -117,6 +121,7 @@ header {
   font-size: 24px;
   font-weight: 600;
   padding: 5px 20px;
+  border-left: 3px solid black;
 }
 
 .selected {
@@ -368,14 +373,32 @@ footer {
   padding: 5px;
 }
 
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1200px) {
   .browser-navigation img {
     display: none;
   }
   .contact h2 {
-    font-size: 50px;
+    font-size: 40px;
   }
-  .contact .contact p, .contact .contact ul {
+  .contact p,
+  .contact ul {
     font-size: 30px;
   }
 }
@@ -385,7 +408,7 @@ footer {
     font-size: 30px;
   }
   .app-container h2 {
-    font-size: 30px;
+    font-size: 25px;
   }
   .app-container p,
   .app-container ul {
@@ -409,45 +432,60 @@ footer {
     -webkit-padding-start: 10px;
             padding-inline-start: 10px;
   }
-  .app-container .nav-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-padding-start: 0;
-            padding-inline-start: 0;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    text-align: center;
+  .app-container .contact {
+    padding: 0 20px;
+  }
+  .app-container .contact h2 {
+    font-size: 25px;
+  }
+  .app-container .contact p,
+  .app-container .contact ul {
+    font-size: 15px;
   }
 }
 
-@media screen and (max-width: 670px) {
-  .nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-top: 16px;
+@media screen and (max-width: 385px) {
+  .app-container .browser .web-title {
+    font-size: 28px;
   }
-  .nav-spaced {
-    -webkit-padding-start: 10px;
-            padding-inline-start: 10px;
+  .app-container .browser .address-bar {
+    margin: 8px 15px;
+    border: 3px solid black;
   }
-  .nav-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-padding-start: 0;
-            padding-inline-start: 0;
+  .app-container .browser .address-bar p {
+    font-size: 13px;
+  }
+  .app-container h1 {
+    font-size: 28px;
+  }
+  .app-container h2 {
+    font-size: 28px;
+  }
+  .app-container .page {
+    font-size: 13px;
+  }
+  .app-container p,
+  .app-container ul {
+    font-size: 15px;
+  }
+  .app-container .remove {
+    font-size: 13px;
+  }
+  .app-container form * {
+    margin-bottom: 10px;
+  }
+  .app-container form h2 {
+    font-size: 23px;
+    margin: 18px;
+  }
+  .app-container form input {
+    font-size: 13px;
+  }
+  .app-container form .btn {
+    font-size: 15px;
+  }
+  .app-container .bottom-decoration p {
+    margin-right: 10px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

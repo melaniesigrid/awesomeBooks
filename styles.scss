@@ -60,6 +60,9 @@ h2 {
       height: 60px;
     }
   }
+  #delete, #home, #previous, #next {
+    cursor: pointer;
+  }
 }
 
 .address-bar {
@@ -87,7 +90,7 @@ header {
   }
 
   p {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 
@@ -98,6 +101,7 @@ header {
   font-size: 24px;
   font-weight: 600;
   padding: 5px 20px;
+  border-left: 3px solid black;
 }
 
 .selected {
@@ -154,7 +158,7 @@ button:hover {
   color: black;
 }
 
-form > * {
+form>* {
   width: fit-content;
   margin-bottom: 20px;
 }
@@ -286,6 +290,15 @@ footer {
   }
 }
 
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  padding-inline-start: 0;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1200px) {
   .browser {
     &-navigation {
@@ -297,40 +310,41 @@ footer {
 
   .contact {
     h2 {
-      font-size: 50px;
+      font-size: 40px;
     }
-    .contact {
-      p, ul {
-        font-size: 30px;
-      }
+
+    p,
+    ul {
+      font-size: 30px;
     }
   }
 }
 
 @media screen and (max-width: 760px) {
-  
+
   .app-container {
     h1 {
       font-size: 30px;
     }
 
     h2 {
-      font-size: 30px;
-      }
+      font-size: 25px;
+    }
 
     p,
     ul {
       font-size: 20px;
-      }
-      
+    }
+
     .page {
       font-size: 20px;
     }
-    
+
     .remove {
       font-size: 20px;
       margin: 5px;
     }
+
     .nav {
       flex-direction: column;
       margin-top: 16px;
@@ -340,28 +354,80 @@ footer {
       padding-inline-start: 10px;
     }
 
-    .nav-links {
-      display: flex;
-      flex-direction: row;
-      padding-inline-start: 0;
-      justify-content: center;
-      text-align: center;
+    .contact {
+      padding: 0 20px;
+
+      h2 {
+        font-size: 25px;
+      }
+
+      p,
+      ul {
+        font-size: 15px;
+      }
     }
   }
 }
 
-@media screen and (max-width: 670px) {
-  .nav {
-    flex-direction: column;
-    margin-top: 16px;
-  }
-  
-  .nav-spaced {
-    padding-inline-start: 10px;
-  }
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    padding-inline-start: 0;
+@media screen and (max-width: 385px) {
+  .app-container {
+
+    .browser {
+      .web-title {
+        font-size: 28px;
+      }
+
+      .address-bar {
+        margin: 8px 15px;
+        border: 3px solid black;
+
+        p {
+          font-size: 13px;
+        }
+
+      }
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    .page {
+      font-size: 13px;
+    }
+
+    p,
+    ul {
+      font-size: 15px;
+    }
+
+    .remove {
+      font-size: 13px;
+    }
+
+    form {
+      * {margin-bottom: 10px;}
+      h2 {
+        font-size: 23px;
+        margin: 18px;
+      }
+      input {
+        font-size: 13px;
+      }
+
+      .btn {
+        font-size: 15px;
+      }
+    }
+
+    .bottom-decoration {
+      p {
+        margin-right: 10px;
+      }
+    }
   }
 }
