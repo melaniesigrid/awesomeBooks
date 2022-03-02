@@ -30,13 +30,13 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@melaniesigrid](https://github.com/melaniesigrid)
 - Twitter: [@SiriMoon11](https://twitter.com/SiriMoon11)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/melanie-arellano-92aaa9194/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/melaniesigrid/)
 
 👤 **Andrés Felipe Arroyave Naranjo**
 
 - GitHub: [@JohnFTitor](https://github.com/JohnFTitor)
 - Twitter: [@johnftitor](https://twitter.com/johnftitor)
-- LinkedIn: [Andres](https://www.linkedin.com/in/andresfelipe117/?locale=en_US)
+- LinkedIn: [Andres](https://www.linkedin.com/in/andresarroyavenaranjo/)
 
 ## 🤝 Contributing
 
